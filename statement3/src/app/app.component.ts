@@ -34,7 +34,7 @@ export class AppComponent {
   }
 
   onSubmit(f:NgForm) {
-      this.input1 = f.value.inp1;
+      this.input1 = f.value.inp1; 
       this.input2 = f.value.inp2;
 
       let row1 = Number(this.input1.split("#")[0])
