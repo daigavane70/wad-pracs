@@ -1,0 +1,32 @@
+<form #f = "ngForm" (ngSubmit) = "onSubmit(f)">
+  <label>Input 1</label>
+  <input type = "text" ngModel name = "inp1" /><br/><br/>
+  <label>Input 2</label>
+  <input type = "text" ngModel name = "inp2" /><br /><br />
+  <button>Submit</button>
+</form>
+
+<br/>
+<br/>
+
+<section *ngIf = "displayMatrices">
+  <h1>Matrix 1</h1>
+  <div *ngFor = "let row of matrix1">
+    <span *ngFor = "let val of row" style="display: inline-block; margin-right: 20px;">{{val}}</span>
+  </div>
+
+  <br />
+  <br />
+  <h1>Matrix 2</h1>
+  <div *ngFor = "let row of matrix2">
+    <span *ngFor = "let val of row" style="display: inline-block; margin-right: 20px;">{{val}}</span>
+  </div>
+
+  <br />
+  <br />
+  <h1>Matrix 3</h1>
+  <div *ngFor = "let row of matrix3">
+    <span *ngFor = "let val of row" style="display: inline-block; margin-right: 20px;">{{val}}</span>
+  </div>
+
+</section>
