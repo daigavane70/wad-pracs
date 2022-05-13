@@ -1,27 +1,37 @@
-# Test
+AngularJS - 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+npm install -g @angular/cli
 
-## Development server
+ng new { test }
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ng g c test_register
 
-## Code scaffolding
+Now, go to test/src/app => app.component.html
+app.component.html => <h1>Hello</h1>
+                        <app-test-register></>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+test-register.component.html =>
 
-## Build
+<form #test="ngForm" (ngSubmit)="onPressButton(test.value)">
+    <input type="text" name="name" ngModel>
+    <input type="text" name="rollno" ngModel>
+    <input type="submit" value="submit">
+</form>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+IMPORT
+app.module.ts =>
+import { FormsModule } from '@angular/forms';
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
 
-## Running unit tests
+test-register.component.ts =>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+onPressButton(harshil:any){
+    document.writeln(harshil.name);
+    document.writeln(harshil.rollno);
+  }
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+(harshil - object created by us)
